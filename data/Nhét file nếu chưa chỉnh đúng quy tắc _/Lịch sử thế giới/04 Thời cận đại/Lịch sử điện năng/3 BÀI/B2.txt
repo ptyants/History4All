@@ -1,0 +1,15 @@
+		LỊCH SỬ ĐIỆN NĂNG (THE STORY OF ELECTRICITY)
+ II. Sự kiện chính:
+*Thế kỷ XVII:
+- Năm 1600: William Gilbert đặt ra thuật ngữ "điện", phân biệt giữa từ tính và tĩnh điện.
+- Năm 1660: Otto von Guericke phát minh ra máy phát điện đầu tiên sử dụng quả cầu lưu huỳnh.
+- Năm 1745: Ewald Georg von Kleist và Pieter van Musschenbroek độc lập phát triển bình Leyden, một tụ điện nguyên thủy.
+      *Thế kỷ XVIII:
+- Năm 1752: Benjamin Franklin tiến hành thí nghiệm diều nổi tiếng của mình, chứng minh mối liên hệ giữa sét và điện.
+- Năm 1786: Luigi Galvani phát hiện ra rằng cơ ếch co giật khi tiếp xúc với dòng điện, dẫn đến việc nghiên cứu điện sinh học.
+      *Thế kỷ XIX:
+- Năm 1800: Alessandro Volta phát minh ra pin hóa học đầu tiên, "cọc điện tử", tạo ra dòng điện liên tục.
+- Năm 1820: Hans Christian Oersted phát hiện ra rằng dòng điện tạo ra từ trường, dẫn đến nền tảng của điện từ học.
+- Năm 1831: Michael Faraday xây dựng định luật cảm ứng điện từ Faraday, mở đường cho máy phát điện và máy biến thế.
+- Năm 1864: James Clerk Maxwell phát triển các phương trình thống nhất điện và từ, được gọi là phương trình Maxwell.
+- Năm 1879: Thomas Edison phát minh ra bóng đèn sợi đốt thiết thực, bắt đầu kỷ nguyên chiếu sáng bằng điện.

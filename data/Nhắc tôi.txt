@@ -1,0 +1,8 @@
+1) Chỉnh lại thời gian min và thời gian cố định cho mỗi bài là 10 phút    ở user_view.html của phần
+ 
+	<input type="number" id="time_today" name="time_today" placeholder="1" required min="1"> phút
+
+
+2) cập nhập sửa đổi danh sách stages
+3) cập nhập thay đổi data trên drive và kiểm tra lại các dữ liệu về thời gian mỗi file có đúng không
+

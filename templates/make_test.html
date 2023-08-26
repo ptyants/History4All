@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài trắc nghiệm</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+
+        .container {
+            max-width: 1000px; /* Increased max-width for a larger container */
+            margin: 0 auto;
+            padding: 30px; /* Increased padding for more spacing */
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px; /* Increased margin for more space below header */
+        }
+
+        .message {
+            background-color: #e2f0fc;
+            padding: 15px; /* Increased padding for more space around message */
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .quiz {
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 30px; /* Increased padding for more space inside quiz section */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz p {
+            margin-bottom: 15px; /* Increased margin for more space between paragraphs */
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increased minmax value */
+            gap: 30px; /* Increased gap between items */
+        }
+
+        .submit-button {
+            margin-top: 50px;
+            display: block;
+            width: 100%;
+            padding: 15px; /* Increased padding for a larger button */
+            background-color: #ff9900;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px; /* Increased font size */
+            text-align: center;
+        }
+
+        .submit-button:hover {
+            background-color: #bd7304;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Trắc nghiệm</h1>
+        </div>
+        
+        <div class="message">
+            <p>Bạn phải làm đúng được 80% số câu thì mới được học các giai đoạn khác. Nếu không bạn sẽ phải học lại từ đầu giai đoạn này</p>
+        </div>
+        
+        <form method="POST" action="{{ url_for('make_test', username=username) }}" class="quiz">
+            <div class="grid-container">
+                {{ data_quizz | safe }}
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

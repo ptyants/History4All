@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn_tab</title>
+    <style>
+        body {
+            font-family: Verdana,sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333
+        }
+
+        #clock-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-left: 200px;
+            color: rgb(5, 5, 106)
+        }
+
+
+        #countdown, #countup {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        form {
+            margin-top: 20px;
+        }
+
+        #correctButton {
+            padding: 10px 20px;
+            background-color: #ffbb01;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #correctButton:hover {
+            background-color: #965505;
+        }
+        p {
+            margin: 10px 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            padding-bottom: 10px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        img {
+            padding-top: 50px;
+            width: 48%; /* Adjust as needed */
+            height: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #startButton, #stopButton {
+            padding: 10px 20px;
+            background-color: #ffbb01;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        #startButton:hover, #stopButton:hover {
+            background-color: #965505;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center; font-size: 60px">Giai đoạn: {{ stage_info[2] }}</h1>
+        <div id="clock-container">
+            <div>
+                <p>Count-down: <span id="countdown">{{time_today}}</span></p>
+                <p>Count-up: <span id="countup">0 : 00</span></p>
+                <button id="startButton">Start Countdown</button>
+                <button id="stopButton">Stop Countdown</button>
+            </div>
+        </div>
+        <h2>{{data[0][i][0]}}</h2>
+        {% for ar in data[0][i][2] %}
+            <pre><p>{{ar}}</p></pre>
+        {% endfor %}
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='uploads/' + data[0][i][3]) }}" alt="Image_1">
+            <img src="{{ url_for('static', filename='uploads/' + data[0][i][3]) }}" alt="Image_2">
+        </div>        
+    </div>
+    <form method="POST">
+        <input type="hidden" id="lessonIndex" name="lessonIndex" value="{{ i }}">
+        <button type="submit" name="correctButton" id="correctButton">Mark as done</button>
+    </form>
+    <script>
+        var countdownInterval;
+        var countdown = parseInt(document.getElementById("countdown").textContent)*60; // 5 minutes in seconds
+
+        function updateCountdownDisplay() {
+            var countdownDisplay = document.getElementById("countdown");
+            var minutes = Math.floor(countdown / 60);
+            var seconds = countdown % 60;
+            countdownDisplay.textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        }
+
+        function startCountdown() {
+            countdownInterval = setInterval(function () {
+                countdown -= 1;
+                updateCountdownDisplay();
+
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                    alert("Countdown is complete!");
+                }
+            }, 1000); // Countdown every second
+        }
+
+        function stopCountdown() {
+            clearInterval(countdownInterval);
+        }
+
+        document.getElementById("startButton").addEventListener("click", startCountdown);
+        document.getElementById("stopButton").addEventListener("click", stopCountdown);
+
+        // Initialize display
+        updateCountdownDisplay();
+    </script>
+</body>
