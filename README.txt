@@ -64,9 +64,12 @@ III) Tóm tắt một số thông tin cơ bản:
 	# Các fameworks:
 		+ Backend sử dụng Falsk Python SQLAlchemy jinja2 js html
 		+ Frontend sử dụng jinja2 js html css
-	# Các tech stacks:
-		Dữ liệu gồm có 2 loại là dữ liệu người dùng và dữ liệu hệ thống 
+	# Architecture:
+		Dữ liệu gồm có 2 loại là dữ liệu người dùng và dữ liệu hệ thống
+		- Dữ liệu người dùng đóng vai trò lưu các thông tin cơ bản của người dùng như Tên, Mật khẩu và thông tin về tiến độ học 
+		- Dữ liệu hệ thống là những dữ liệu bài học, bài tập dạng câu hỏi ở cuối mỗi giai đoạn cho người dùng, nó được lưu vào file "data" để khi nhận được yêu cầu hệ thống sẽ lấy dữ liệu từ "data" và trích xuất ra cho người dùng
 
+		
 
 
 

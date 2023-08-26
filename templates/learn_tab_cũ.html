@@ -87,17 +87,7 @@
         #startButton:hover, #stopButton:hover {
             background-color: #965505;
         }
-        .alert {
-            position: fixed;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ffcc00;
-            padding: 10px 20px;
-            border: 1px solid #ff9933;
-            border-radius: 5px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-        }
+        
     </style>
 </head>
 <body>
@@ -126,8 +116,7 @@
     </form>
     <script>
         var countdownInterval;
-        var countdown = parseInt(localStorage.getItem("countdownValue")) || (parseInt(document.getElementById("countdown").textContent) * 60); // 5 minutes in seconds
-        var alertShown = false; // Biến kiểm tra thông báo đã hiển thị hay chưa
+        var countdown = parseInt(document.getElementById("countdown").textContent)*60; // 5 minutes in seconds
 
         function updateCountdownDisplay() {
             var countdownDisplay = document.getElementById("countdown");
@@ -141,34 +130,15 @@
                 countdown -= 1;
                 updateCountdownDisplay();
 
-                // Lưu giá trị countdown vào localStorage
-                localStorage.setItem("countdownValue", countdown);
-
-                if (countdown <= 0 && !alertShown) { // Chỉ hiển thị thông báo nếu chưa được hiển thị trước đó
+                if (countdown <= 0) {
                     clearInterval(countdownInterval);
-                    showAlert("Countdown is complete!");
-                    alertShown = true; // Đã hiển thị thông báo
+                    alert("Countdown is complete!");
                 }
             }, 1000); // Countdown every second
         }
 
         function stopCountdown() {
             clearInterval(countdownInterval);
-            alertShown = false; // Đặt lại biến khi ngừng đếm
-        }
-
-        function showAlert(message) {
-            var alertDiv = document.createElement("div");
-            alertDiv.className = "alert";
-            alertDiv.innerHTML = `
-                <p>${message}</p>
-                <button id="alertButton">OK</button>
-            `;
-            document.body.appendChild(alertDiv);
-
-            document.getElementById("alertButton").addEventListener("click", function () {
-                document.body.removeChild(alertDiv);
-            });
         }
 
         document.getElementById("startButton").addEventListener("click", startCountdown);
