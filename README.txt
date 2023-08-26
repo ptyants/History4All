@@ -1,6 +1,6 @@
-Chào mừng bạn đã đến với bản demo Edu4All của dự án "Ánh sáng trong em"
+Chào mừng bạn đã đến với bản demo History4All 
 Chúng mình là nhóm "Code đến hơi thở cuối cùng"
-Sau đây sẽ là một số hướng dẫn để bạn có thể tải về và khởi chạy được trang web này
+Sau đây sẽ là một số hướng dẫn để bạn có thể tải về, khởi chạy được trang web và những tóm tắt thông tin cơ bản về trang web này
 
 I) Tải code về máy:
 Cách 1: Tải code về máy bằng git clone
@@ -60,33 +60,18 @@ Tham khảo thêm ở: https://blogchiasekienthuc.com/lap-trinh/cai-dat-git-tren
                   https://docs.python.org/3/tutorial/venv.html    (cách tạo môi trường ảo cho máy)
 			      https://t3h.com.vn/tin-tuc/trien-khai-ung-dung-vi-du-python-flask-bang-heroku  (cách tạo môi trường ảo cho máy)
 
+III) Tóm tắt một số thông tin cơ bản:
+	# Các fameworks:
+		+ Backend sử dụng Falsk Python SQLAlchemy jinja2 js html
+		+ Frontend sử dụng jinja2 js html css
+	# Các tech stacks:
+		Dữ liệu gồm có 2 loại là dữ liệu người dùng và dữ liệu hệ thống 
 
-III) Một số chú thích về việc vận hành web:
-    - Các loại thẻ đã ghi trong file "tags list.txt" sẽ được hiển thị để người dùng (học viên và giáo viên) có thể chọn  
-    - Nên bạn có thể thêm bớt các thẻ tag trong file "tags list.txt" để người dùng có thể thấy được những gì bạn muốn hướng đến
-    - File "tags list.txt" sẽ hoạt động độc lập với dữ liệu chương trình nên việc bạn xóa thẻ tag chỉ có thể khiến cho người dùng sẽ không thể nhìn thấy thẻ tag đó để chọn nữa thôi
-    - Chỉ khi người dùng submit các thẻ đã chọn một lần nữa sau khi xóa thẻ tag trong file "tags list.txt" thì lúc đó người dùng mới chính thức không thể thấy được các video của thẻ tag đó
-    - Chạy file app.py để vận hành hệ thống
 
-IV) Một số tài khoản mà bạn có thể trực tiếp trải nghiệm web mà không cần đăng ký:
-1.	Role giáo viên: (gõ liền không cách)
-		User_name: gv
-		Email: gv@dds
-		Password: gv
-
-2. 	Role học viên: (gõ liền không cách)
-(Nếu bạn muốn trải nghiệm như một học viên mới thì xin hãy tự tạo khoản riêng để trải nghiệm)
-
-		User_name: Thế An
-		Password: Thế An
-
-		User_name: hs
-		Email: hs@s
-		Password: hs
 
 
 
 Nếu bạn có thắc mắc hoặc những ý tưởng cải tiến bổ sung gì về trang web,
  gặp vấn đề trong việc tải xuống hoặc khởi chạy web mà chưa chỉnh sửa, xin hãy liên hệ gmail: phamtheants@gmail.com
 
-Edu4All - Xin cảm ơn
+History4All- Xin cảm ơn
