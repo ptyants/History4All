@@ -128,35 +128,49 @@
         var countdownInterval;
         var countdown = parseInt(localStorage.getItem("countdownValue")) || (parseInt(document.getElementById("countdown").textContent) * 60); // 5 minutes in seconds
         var alertShown = false; // Biến kiểm tra thông báo đã hiển thị hay chưa
-
+        var count_30s = 30; // Đếm 30 giây
+    
         function updateCountdownDisplay() {
             var countdownDisplay = document.getElementById("countdown");
             var minutes = Math.floor(countdown / 60);
             var seconds = countdown % 60;
             countdownDisplay.textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
         }
-
+    
         function startCountdown() {
             countdownInterval = setInterval(function () {
                 countdown -= 1;
                 updateCountdownDisplay();
-
+    
                 // Lưu giá trị countdown vào localStorage
                 localStorage.setItem("countdownValue", countdown);
-
-                if (countdown <= 0 && !alertShown) { // Chỉ hiển thị thông báo nếu chưa được hiển thị trước đó
+    
+                if (countdown <= 0 && !alertShown) {
                     clearInterval(countdownInterval);
                     showAlert("Countdown is complete!");
-                    alertShown = true; // Đã hiển thị thông báo
+                    document.getElementById("alertButton").addEventListener("click", function () {
+                        alertShown = true; // Cập nhật biến alertShown thành true khi nhấp vào nút OK
+                        document.body.removeChild(alertDiv);
+                    });
+                    if (!alertShown && count_30s > 0) {
+                    count_30s -= 1;
+                }
+                }
+    
+                
+    
+                if (count_30s <= 0 && !alertShown) {
+                    clearInterval(countdownInterval);
+                    window.location.href = "{{ url_for('user_view', username=username) }}";
                 }
             }, 1000); // Countdown every second
         }
-
+    
         function stopCountdown() {
             clearInterval(countdownInterval);
             alertShown = false; // Đặt lại biến khi ngừng đếm
         }
-
+    
         function showAlert(message) {
             var alertDiv = document.createElement("div");
             alertDiv.className = "alert";
@@ -165,15 +179,11 @@
                 <button id="alertButton">OK</button>
             `;
             document.body.appendChild(alertDiv);
-
-            document.getElementById("alertButton").addEventListener("click", function () {
-                document.body.removeChild(alertDiv);
-            });
         }
-
+    
         document.getElementById("startButton").addEventListener("click", startCountdown);
         document.getElementById("stopButton").addEventListener("click", stopCountdown);
-
+    
         // Initialize display
         updateCountdownDisplay();
     </script>
